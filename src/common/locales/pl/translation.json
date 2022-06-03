@@ -1,0 +1,14 @@
+{
+    "addAnAlbum": "dodaj album",
+    "addToList": "dodaj do listy",
+    "sortBy": "sortuj według",
+    "name": "nazwa",
+    "date": "data",
+    "toggleListOrGrid": "Przełącz listę lub siatkę",
+    "albumName": "Nazwa albumu",
+    "dateCreated": "Data utworzenia",
+    "action": "Akcja",
+    "noData": "Brak danych",
+    "setBestOfTheBest": "Ustaw najlepsze z najlepszych",
+    "remove": "Usunąć"
+}

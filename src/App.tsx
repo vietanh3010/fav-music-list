@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from "@mui/material";
+import React from "react";
+import { withTranslation } from "react-i18next";
+import AppRoutes from "./apps/AppRoutes";
+import { I18nextProvider } from 'react-i18next';
+import i18n from "./common/i18n";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#169CD8',
+      },
+      warning: {
+          main: '#d97706',
+      }
+    },
+    typography: {
+        button: {
+          textTransform: 'none'
+        }
+    }
+});
+
+const AppComponent = (): JSX.Element => {
+    const AppContainer = withTranslation()(AppRoutes); 
+
+    return (
+        <I18nextProvider i18n={i18n}>
+            <ThemeProvider theme={theme}>
+                <AppContainer/>
+            </ThemeProvider>
+        </I18nextProvider>
+       
+    )
 }
 
+const App = React.memo(AppComponent);
 export default App;
